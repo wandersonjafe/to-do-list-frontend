@@ -1,75 +1,53 @@
-# React + TypeScript + Vite
+# To-Do List | Front-End 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web moderna e responsiva desenvolvida em **React** com **TypeScript** e **Vite** para o gerenciamento de tarefas diárias. O sistema conta com autenticação de usuários (JWT), consumo de API REST segura e uma experiência de uso fluida.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologias Utilizadas
 
-## React Compiler
+- **React 18+** / **TypeScript**
+- **Vite** (Build tool e bundler de alta performance)
+- **React Router** (Gerenciamento de rotas e proteção de telas autenticadas)
+- **Axios** (Comunicação HTTP com a API back-end)
+- **CSS Modules / Tailwind** (Estilização da interface)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Autenticação de Usuários:** Telas de Login e Cadastro integradas com segurança via tokens JWT.
+- **Gerenciamento de Tarefas (CRUD):**
+  - Criar novas tarefas com título e descrição.
+  - Listar tarefas do usuário logado.
+  - Marcar tarefas como concluídas ou pendentes.
+  - Excluir tarefas individualmente ou limpar todas de uma vez com um clique.
+- **Proteção de Rotas:** Redirecionamento automático para a tela de login caso o usuário não esteja autenticado.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ⚙️ Pré-requisitos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Certifique-se de ter instalado em sua máquina:
+- **Node.js** (versão 18 ou superior recomendada)
+- **npm** ou **yarn**
 
-```
+---
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Como Rodar o Projeto Localmente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone o repositório e acesse a pasta do front-end:
+   ```bash
+   git clone [https://github.com/wandersonjafe/to-do-list-frontend.git](https://github.com/wandersonjafe/to-do-list-frontend.git)
+   cd todolist-frontend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  1. Instale as dependências:
 
-```
+   npm install
+
+  2. Crie um arquivo .env na raiz do projeto baseando-se no ambiente de desenvolvimento:
+     
+  VITE_API_BASE_URL=http://localhost:8080
+
+  3. npm run dev
+
